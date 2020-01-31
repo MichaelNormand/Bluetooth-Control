@@ -1,0 +1,10 @@
+led-backend/node_modules/
+led-ui/node_modules/
+
+led-backend/.env
+
+led-backend/package-lock.json
+led-ui/package-lock.json
+
+led-backend/package.json.save
+led-ui/package.json.save
