@@ -1,0 +1,66 @@
+.device {
+    padding: 20px;
+    border: 3px solid #ffffff;
+    display: inline-block;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    max-width: 500px;
+}
+
+
+.device  * {
+    font-family: 'B12 Regular';
+}
+
+.device h1 {
+    color: #424242;
+}
+
+.device h1:after {
+    content: "";
+    display: block;
+    width: 60px;
+    border-bottom: 1px solid #424242;
+    margin: 0 auto;
+}
+
+.device h3.active {
+    color: #379683;
+}
+
+.device h3.inactive {
+    color: #ff6666;
+}
+
+.device button {
+    font-weight: bold;
+    padding: 7px 15px;
+    border: 1px solid #F4F5F7;
+    border-radius: 5px;
+    background-size: 100% 200%;
+    outline: none;
+    transition: all 0.5s;
+    min-width: 90px;
+}
+
+.device button.inactive {
+    color: #ff6666;
+    background-image: linear-gradient(to bottom, #F4F5F7 50%, #ff6666 50%);
+}
+
+.device button.active {
+    color: #379683;
+    background-image: linear-gradient(to bottom, #F4F5F7 50%, #379683 50%);
+}
+
+.device button:hover {
+    cursor: pointer;
+    background-position: 0 -100%;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.device button:last-child {
+    margin-left: 1em;
+}
