@@ -1,26 +1,18 @@
 import React from 'react'
 import './device.css'
 
+// Classe permettant de gérer un appareil
 export default class Device extends React.Component {
+    // Constructeur de la classe
     constructor() {
         super()
+        // Instanciation des états de l'appareil
         this.state = {
             status: undefined
         }
     }
-    componentDidMount() {
-        if (this.state.status === undefined) {
-            this.setState({ status: this.props.status })
-        }
-        if (this.props.socket !== undefined) {
-            this.props.socket.on('device-status-changed', data => {
-                let deviceChanged = JSON.parse(data)
-                if (deviceChanged.key === this.props.id) {
-                    this.setState({status: deviceChanged.status})
-                }
-            })
-        }
-    }
+
+    // Méthode permettant de détecter lorsqu'un clic de changement d'état a été déclenché
     handleStateChangeClick = event => {
         if (this.props.socket === undefined) {
             console.log('There is no socket available')
@@ -31,6 +23,8 @@ export default class Device extends React.Component {
             JSON.stringify({ key: this.props.id, status: !this.state.status })
         )
     }
+
+    // Méthode permettant de détecter lorsqu'un clic de suppression d'appareil a été déclenché
     handleDestroyClick = event => {
         if (this.props.socket === undefined) {
             console.log('There is no socket available')
@@ -41,6 +35,8 @@ export default class Device extends React.Component {
             JSON.stringify({ key: this.props.id })
         )
     }
+
+    // Méthode permettant d'afficher l'appareil
     render() {
         return (
             <div className="device">
@@ -71,5 +67,20 @@ export default class Device extends React.Component {
                 </button>
             </div>
         )
+    }
+
+    // Méthode permettant de détecter lorsque l'appareil a été monté / affiché
+    componentDidMount() {
+        if (this.state.status === undefined) {
+            this.setState({ status: this.props.status })
+        }
+        if (this.props.socket !== undefined) {
+            this.props.socket.on('device-status-changed', data => {
+                let deviceChanged = JSON.parse(data)
+                if (deviceChanged.key === this.props.id) {
+                    this.setState({ status: deviceChanged.status })
+                }
+            })
+        }
     }
 }

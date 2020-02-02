@@ -8,8 +8,7 @@
     max-width: 500px;
 }
 
-
-.device  * {
+.device * {
     font-family: 'B12 Regular';
 }
 
@@ -18,7 +17,7 @@
 }
 
 .device h1:after {
-    content: "";
+    content: '';
     display: block;
     width: 60px;
     border-bottom: 1px solid #424242;
@@ -36,7 +35,7 @@
 .device button {
     font-weight: bold;
     padding: 7px 15px;
-    border: 1px solid #F4F5F7;
+    border: 1px solid #f4f5f7;
     border-radius: 5px;
     background-size: 100% 200%;
     outline: none;
@@ -46,12 +45,12 @@
 
 .device button.inactive {
     color: #ff6666;
-    background-image: linear-gradient(to bottom, #F4F5F7 50%, #ff6666 50%);
+    background-image: linear-gradient(to bottom, #f4f5f7 50%, #ff6666 50%);
 }
 
 .device button.active {
     color: #379683;
-    background-image: linear-gradient(to bottom, #F4F5F7 50%, #379683 50%);
+    background-image: linear-gradient(to bottom, #f4f5f7 50%, #379683 50%);
 }
 
 .device button:hover {
