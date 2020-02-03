@@ -58,6 +58,7 @@ export default class App extends React.Component {
                     })
                 })
             })
+            this.setState({webSocket: socket})
         }
     }
     // Méthode permettant d'afficher l'application

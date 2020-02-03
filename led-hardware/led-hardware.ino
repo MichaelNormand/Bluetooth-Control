@@ -5,12 +5,12 @@
 #include <WiFi.h>
 
 // Constantes contenant les informations du réseau auquel le module se connectera
-const char* ssid = "Tbin1tsitchum";
-const char* password = "taptouche";
+const char* ssid = "CEGEPVICTO";
+const char* password = "";
 
 // Constantes contenant les informations du serveur où le module se connectera
-const char* host = "173.237.251.15";
-const int port = 5000;
+const char* host = "connect.domotyx.org";
+const int port = 80;
 
 // Variable qui contiendera l'information reçu par le serveur
 String incoming = "";
@@ -139,7 +139,7 @@ void switchLight(bool state) {
   if (key == "") {
     // On envoie un message de confirmation avec un clé vide
     client.print("{\"request\":\"STATUS_CHANGE_CONFIRMATION\",\"key\":undefined,\"status\":" + ledStatus + "}");
-    return
+    return;
   }
   // On envoie un messag de confirmation avec la clé d'authentification
   client.print("{\"request\":\"STATUS_CHANGE_CONFIRMATION\",\"key\":\"" + key + "\",\"status\":" + ledStatus + "}");
