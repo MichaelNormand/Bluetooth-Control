@@ -5,12 +5,12 @@
 #include <WiFi.h>
 
 // Constantes contenant les informations du réseau auquel le module se connectera
-const char* ssid = "CEGEPVICTO";
-const char* password = "";
+const char* ssid = "Tbin1tsitchum";
+const char* password = "taptouche";
 
 // Constantes contenant les informations du serveur où le module se connectera
 const char* host = "connect.domotyx.org";
-const int port = 80;
+const int port = 5000;
 
 // Variable qui contiendera l'information reçu par le serveur
 String incoming = "";
@@ -19,7 +19,7 @@ String incoming = "";
 String ledStatus = "false";
 
 // Variable contenant le nom du module
-String deviceName = "Light Switch";
+String deviceName = "Interrupteur de Lampe";
 
 // Variable qui contiendera la clé d'authentification au serveur
 String key = "";
